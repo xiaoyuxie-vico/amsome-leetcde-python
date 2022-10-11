@@ -1,0 +1,1 @@
+# amsome-leetcde-python
