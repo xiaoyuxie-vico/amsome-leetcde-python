@@ -1,1 +1,1 @@
-# amsome-leetcde-python
+# Awesome Leetcde in Python
