@@ -11,7 +11,7 @@ def combine(root, pdfs):
     print('Combine done')
 
 if __name__ == '__main__':
-    ch_num = 2
+    ch_num = 3
 
     if ch_num == '1':
         # chapter 1
@@ -35,5 +35,16 @@ if __name__ == '__main__':
             '11._container_with_most_water.pdf',
             '42._trapping_rain_water.pdf',
         ]
+    elif ch_num == 3:
+        # chapter 3
+        root = '3_Sliding_Window'
+        pdfs = [
+            '121._best_time_to_buy_and_sell_stock.pdf',
+            '3._longest_substring_without_repeating_character.pdf',
+            '424._longest_repeating_character_replacement.pdf',
+            '567._permutation_in_string.pdf',
+            '76._minimum_window_substring.pdf',
+        ]
+
 
     combine(root, pdfs)
