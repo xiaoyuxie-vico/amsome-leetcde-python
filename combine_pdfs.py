@@ -1,3 +1,4 @@
+import sys	
 from PyPDF2 import PdfFileMerger
 
 def combine(root, pdfs):
@@ -11,7 +12,8 @@ def combine(root, pdfs):
     print('Combine done')
 
 if __name__ == '__main__':
-    ch_num = 3
+    ch_num = int(sys.argv[1])
+    print('ch_num', ch_num)
 
     if ch_num == '1':
         # chapter 1
@@ -44,6 +46,17 @@ if __name__ == '__main__':
             '424._longest_repeating_character_replacement.pdf',
             '567._permutation_in_string.pdf',
             '76._minimum_window_substring.pdf',
+        ]
+    elif ch_num == 4:
+        # chapter 4
+        root = '4_Stack'
+        pdfs = [
+        	'20._valid_parentheses.pdf',
+        	'155._min_stack.pdf',
+        	'150._evaluate_reverse_polish_notation.pdf',
+        	'22._generate_parentheses.pdf',
+        	'739._daily_temperatures.pdf',
+        	'853._car_fleet.pdf',
         ]
 
 
