@@ -1,27 +1,39 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Binary search](#binary-search)
+  - [使用条件](#使用条件)
+  - [复杂度](#复杂度)
+  - [领扣例题](#领扣例题)
+  - [代码模版](#代码模版)
 - [Two pointers](#two-pointers)
+  - [使用条件](#使用条件-1)
+  - [复杂度](#复杂度-1)
+  - [领扣例题](#领扣例题-1)
+  - [代码模版](#代码模版-1)
+    - [相向双指针(patition in quicksort)](#相向双指针patition-in-quicksort)
+    - [背向双指针](#背向双指针)
+    - [同向双指针](#同向双指针)
+    - [合并双指针](#合并双指针)
 - [Reference](#reference)
 
 
 # Binary search
-1. 使用条件
+##  使用条件
 - 排序数组 (30-40%是二分)
 - 当面试官要求你找一个比 O(n) 更小的时间复杂度算法的时候(99%)
 - 找到数组中的一个分割位置，使得左半部分满足某个条件，右半部分不满足(100%)
 - 找到一个最大/最小的值使得某个条件被满足(90%)
 
-2. 复杂度
+## 复杂度
 - 时间复杂度：`O(logn)`
 - 空间复杂度：`O(1)`
 
-3. 领扣例题
+## 领扣例题
 - LintCode 14. 二分查找(在排序的数据集上进行二分)
 - LintCode 460. 在排序数组中找最接近的 K 个数 (在未排序的数据集上进行二分)
 - LintCode 437. 书籍复印(在答案集上进行二分 )
 
-4. 代码模版
+## 代码模版
 ```python
 def binary_search(self, nums, target):
     # corner case 处理
@@ -64,26 +76,26 @@ def binary_search(self, nums, target):
 ```
 
 # Two pointers
-1. 使用条件
+## 使用条件
 - 滑动窗口 (90%)
 - 时间复杂度要求 `O(n)` (80%是双指针)
 - 要求原地操作，只可以使用交换，不能使用额外空间 (80%)
 - 有子数组 subarray /子字符串 substring 的关键词 (50%)
 - 有回文 Palindrome 关键词(50%)
 
-2. 复杂度
+## 复杂度
 - 时间复杂度：`O(n)` 。时间复杂度与最内层循环主体的执行次数有关。与有多少重循环无关
 - 空间复杂度：`O(1)` 。只需要分配两个指针的额外内存
 
-3. 领扣例题
+## 领扣例题
 - LintCode 1879. 两数之和 VII(同向双指针)
 - LintCode 1712. 和相同的二元子数组(相向双指针)
 - LintCode 627. 最长回文串 (背向双指针)
 - LintCode 64: 合并有序数组
 
-4. 代码模版
+## 代码模版
 
-4.1  相向双指针(patition in quicksort)
+###  相向双指针(patition in quicksort)
 ```python
 def patition(self, A, start, end):
     if start >= end:
@@ -107,10 +119,65 @@ def patition(self, A, start, end):
             A[left], A[right] = A[right], A[left]
             left += 1
             right -= 1
-        
-
 ```
 
+### 背向双指针
+```python
+left = position
+right = position + 1
+
+while left >= 0 and right < len(s):
+    if left 和 right 可以停下来了:
+        break
+    left -= 1
+    right += 1
+```
+
+### 同向双指针
+
+```python
+j = 0
+
+for i in range(n):
+    # 不满足则循环到满足搭配为止
+    while j < n and i 到 j 之间不满足条件:
+        j += 1
+    if i 到 j 之间满足条件:
+        处理 i 到 j 这段区间
+```
+
+### 合并双指针
+
+按顺序拼接两个list的数字
+
+```python
+def merge(list1, list2):
+    new_list = []
+    i, j = 0, 0
+    
+    # 合并的过程只能操作 i, j 的移动，不要去用 list1.pop(0) 之类的操作
+    # 因为 pop(0) 是 O(n) 的时间复杂度
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            new_list.append(list1[i])
+            i += 1
+        else:
+            new_list.append(list2[j])
+            j += 1
+    
+    # 合并剩下的数到 new_list 里
+    # 不要用 new_list.extend(list1[i:]) 之类的方法
+    # 因为 list1[i:] 会产生额外空间耗费
+    while i < len(list1):
+        new_list.append(list1[i])
+        i += 1
+    
+    while j < len(list2):
+        new_list.append(list2[j])
+        j += 1
+    
+    return new_list
+```
 
 # Reference
 - [ninechapter-algorithm/leetcode-linghu-templete](https://github.com/ninechapter-algorithm/leetcode-linghu-templete)
