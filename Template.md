@@ -14,6 +14,11 @@
     - [背向双指针](#背向双指针)
     - [同向双指针](#同向双指针)
     - [合并双指针](#合并双指针)
+- [Sorting](#sorting)
+  - [复杂度](#复杂度-2)
+  - [领扣例题](#领扣例题-2)
+  - [代码模板](#代码模板)
+    - [Quick sort](#quick-sort)
 - [Reference](#reference)
 
 
@@ -178,6 +183,59 @@ def merge(list1, list2):
     
     return new_list
 ```
+
+# Sorting
+
+## 复杂度
+- 时间复杂度： 
+  - 快速排序(期望复杂度): `O(nlogn)` 
+  - 归并排序(最坏复杂度): `O(nlogn)`
+- 空间复杂度： 
+  - 快速排序: `O(1)` 
+  - 归并排序 ：`O(n)`
+
+## 领扣例题
+- LintCode 464. 整数排序 II
+
+## 代码模板
+
+### Quick sort
+
+```python
+class Solution:
+    # @param {int[]} A an integer array 
+    # @return nothing
+
+    def sortIntegers(self, A):
+        # Write your code here
+        self.quickSort(A, 0, len(A) - 1)
+    
+    def quickSort(self, A, start, end):
+        if start >= end:
+            return
+        
+        left, right = start, end
+        # key point 1: pivot is the value, not the index
+        pivot = A[(start + end) // 2]
+
+        # key point 2: every time you compare left & right, it should be
+        # left <= right not left < right
+        while left <= right:
+            while left <= right and A[left] < pivot:
+                left += 1
+            
+            while left <= right and A[right] > pivot:
+                right -= 1
+
+            if left <= right:
+                A[left], A[right] = A[right], A[left]
+                left += 1 right -= 1
+
+        self.quickSort(A, start, right)
+        self.quickSort(A, left, end)
+```
+
+
 
 # Reference
 - [ninechapter-algorithm/leetcode-linghu-templete](https://github.com/ninechapter-algorithm/leetcode-linghu-templete)
