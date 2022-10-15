@@ -21,6 +21,15 @@
     - [Quick sort](#quick-sort)
     - [Merge sort](#merge-sort)
 - [Binary Tree Divide & Conquer](#binary-tree-divide--conquer)
+  - [使用条件](#使用条件-2)
+  - [复杂度](#复杂度-3)
+  - [领扣例题](#领扣例题-3)
+  - [代码模板](#代码模板-1)
+- [二叉搜索树非递归 BST Iterator](#二叉搜索树非递归-bst-iterator)
+  - [使用条件](#使用条件-3)
+  - [复杂度](#复杂度-4)
+  - [领扣例题](#领扣例题-4)
+  - [代码模板](#代码模板-2)
 - [Reference](#reference)
 
 
@@ -290,7 +299,56 @@ class Solution:
 ```
 
 # Binary Tree Divide & Conquer
+## 使用条件
+- 二叉树相关的问题 (99%)
+- 可以一分为二去分别处理之后再合并结果 (100%)
+- 数组相关的问题 (10%)
 
+## 复杂度
+- 时间复杂度 `O(n)` 
+- 空间复杂度 `O(n)` (含递归调用的栈空间最大耗费)
+
+## 领扣例题
+- LintCode 1534. 将二叉搜索树转换为已排序的双向链接列表
+- LintCode 94. 二叉树中的最大路径和
+- LintCode 95. 验证二叉查找树
+
+## 代码模板
+```python
+def divide_conquer(root):
+    # 递归出口
+    # 一般处理 node == null 就够了
+    # 大部分情况不需要处理 node == leaf
+    if root is None:
+        return ...
+    
+    # 处理左子树
+    left_result = divide_conquer(node.left)
+    # 处理右子树
+    right_result = divide_conquer(node.right)
+    # 合并答案
+    result = merge left_result and right_result to get merged result
+    return result
+```
+
+# 二叉搜索树非递归 BST Iterator
+
+## 使用条件
+- 用非递归的方式（Non-recursion / Iteration）实现二叉树的中序遍历
+- 常用于 BST 但不仅仅可以用于 BST
+
+## 复杂度
+- 时间复杂度 O(n) 
+- 空间复杂度 O(n) 
+
+## 领扣例题
+- LintCode 67. 二叉树的中序遍历
+- LintCode 902. 二叉搜索树的第k大元素
+
+## 代码模板
+```python 
+
+```
 
 # Reference
 - [ninechapter-algorithm/leetcode-linghu-templete](https://github.com/ninechapter-algorithm/leetcode-linghu-templete)
