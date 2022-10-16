@@ -1,4 +1,4 @@
-import sys	
+import sys
 from PyPDF2 import PdfFileMerger
 
 def combine(root, pdfs):
@@ -51,12 +51,23 @@ if __name__ == '__main__':
         # chapter 4
         root = '4_Stack'
         pdfs = [
-        	'20._valid_parentheses.pdf',
-        	'155._min_stack.pdf',
-        	'150._evaluate_reverse_polish_notation.pdf',
-        	'22._generate_parentheses.pdf',
-        	'739._daily_temperatures.pdf',
-        	'853._car_fleet.pdf',
+            '20._valid_parentheses.pdf',
+            '155._min_stack.pdf',
+            '150._evaluate_reverse_polish_notation.pdf',
+            '22._generate_parentheses.pdf',
+            '739._daily_temperatures.pdf',
+            '853._car_fleet.pdf',
+        ]
+    elif ch_num == 5:
+        # chapter 5
+        root = '5_Binary_Search'
+        pdfs = [
+            '704._binary_search.pdf',
+            '74._search_a_2d_matrix.pdf',
+            '875._koko_eating_bananas.pdf',
+            '33._search_in_rotated_sorted_array.pdf',
+            '153._find_minimum_in_rotated_sorted_array.pdf',
+            '981._time_based_key-value_store.pdf',
         ]
 
 
