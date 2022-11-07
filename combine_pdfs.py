@@ -69,6 +69,20 @@ if __name__ == '__main__':
             '153._find_minimum_in_rotated_sorted_array.pdf',
             '981._time_based_key-value_store.pdf',
         ]
+    elif ch_num == 6:
+        # chapter 6
+        root = '6_Linked_list'
+        pdfs = [
+            '92._reverse_linked_list_ii.pdf',
+            '21._merge_two_sorted_lists.pdf',
+            '143._reorder_list.pdf',
+            '19._remove_nth_node_from_end_of_list.pdf',
+            '138._copy_list_with_random_pointer.pdf',
+            '2._add_two_numbers.pdf',
+            '141._linked_list_cycle.pdf',
+            '287._find_the_duplicate_number.pdf',
+            '146._lru_cache.pdf'
+        ]
 
 
     combine(root, pdfs)
