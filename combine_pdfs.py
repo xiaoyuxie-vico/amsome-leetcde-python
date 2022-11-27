@@ -83,6 +83,24 @@ if __name__ == '__main__':
             '287._find_the_duplicate_number.pdf',
             '146._lru_cache.pdf'
         ]
+    elif ch_num == 7:
+        # chapter 7
+        root = '7_Tree'
+        pdfs = [
+            '226._invert_binary_tree.pdf',
+            '104._maximum_depth_of_binary_tree.pdf',
+            '543._diameter_of_binary_tree.pdf',
+            '110._balanced_binary_tree.pdf',
+            '100._same_tree.pdf',
+            '572._subtree_of_another_tree.pdf',
+            '235._lowest_common_ancestor_of_a_binary_search_tree.pdf',
+            '102._binary_tree_level_order_traversal.pdf',
+            '199._binary_tree_right_side_view.pdf',
+            '1448._count_good_nodes_in_binary_tree.pdf',
+            '98._validate_binary_search_tree.pdf',
+            '230._kth_smallest_element_in_a_bst.pdf',
+            '105._construct_binary_tree_from_preorder_and_inorder_traversal.pdf',
+        ]
 
 
     combine(root, pdfs)
