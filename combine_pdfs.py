@@ -103,7 +103,7 @@ if __name__ == '__main__':
         ]
     elif ch_num == 8:
         # chapter 8
-        root = '8_Backtrack'
+        root = '8_Backtracking'
         pdfs = [
         	'78._subsets.pdf',
         	'90._subsets_ii.pdf',
