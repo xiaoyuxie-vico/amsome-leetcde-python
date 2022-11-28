@@ -101,6 +101,24 @@ if __name__ == '__main__':
             '230._kth_smallest_element_in_a_bst.pdf',
             '105._construct_binary_tree_from_preorder_and_inorder_traversal.pdf',
         ]
+    elif ch_num == 8:
+        # chapter 8
+        root = '8_Backtrack'
+        pdfs = [
+        	'78._subsets.pdf',
+        	'90._subsets_ii.pdf',
+        	'77._combinations.pdf',
+        	'39._combination_sum.pdf',
+        	'40._combination_sum_ii.pdf',
+        	'46._permutations.pdf',
+        	'47._permutations_ii.pdf',
+        	'36._valid_sudoku.pdf',
+        	'37._sudoku_solver.pdf',
+        	'51._n-queens.pdf',
+        	'79._word_search.pdf',
+        	'131._palindrome_partitioning.pdf',
+            '17._letter_combinations_of_a_phone_number.pdf',
+        ]
 
 
     combine(root, pdfs)
