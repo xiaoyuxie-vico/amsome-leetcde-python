@@ -2,4 +2,6 @@
 
 Leetcode notes
 
-Follow [NeetCode practice](https://neetcode.io/practice).
+References:
+- [NeetCode practice](https://neetcode.io/practice).
+- [Labulongdong](https://labuladong.gitee.io/algo/1/3/)
