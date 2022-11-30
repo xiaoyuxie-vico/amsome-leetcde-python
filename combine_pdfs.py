@@ -119,6 +119,16 @@ if __name__ == '__main__':
         	'131._palindrome_partitioning.pdf',
             '17._letter_combinations_of_a_phone_number.pdf',
         ]
+    elif ch_num == 9:
+        # chapter 9
+        root = '9_Island'
+        pdfs = [
+        	'1020._number_of_enclaves.pdf',
+        	'1254._number_of_closed_islands.pdf',
+        	'1905._count_sub_islands.pdf',
+        	'200._number_of_islands.pdf',
+        	'695._max_area_of_island.pdf',
+        ]
 
 
     combine(root, pdfs)
